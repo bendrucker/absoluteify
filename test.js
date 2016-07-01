@@ -12,6 +12,10 @@ test(function (t) {
   fs.createReadStream(path.resolve(__dirname, 'example-relative.html'))
     .pipe(absoluteify('https://base'))
     .pipe(concat(function (html) {
-      t.equal(html, fs.readFileSync(path.resolve(__dirname, 'example-absolute.html')))
+      t.equal(
+        html.toString(),
+        fs.readFileSync(path.resolve(__dirname, 'example-absolute.html')).toString(),
+        'outputs re-formatted html with absolute paths'
+      )
     }))
 })
