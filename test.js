@@ -6,7 +6,7 @@ const fs = require('fs')
 const concat = require('concat-stream')
 const absoluteify = require('./')
 
-test(function (t) {
+test('relative to absolute', function (t) {
   t.plan(1)
 
   fs.createReadStream(path.resolve(__dirname, 'example-relative.html'))
@@ -16,6 +16,20 @@ test(function (t) {
         html.toString(),
         fs.readFileSync(path.resolve(__dirname, 'example-absolute.html')).toString(),
         'outputs re-formatted html with absolute paths'
+      )
+    }))
+})
+
+test('already absolute', function (t) {
+  t.plan(1)
+
+  fs.createReadStream(path.resolve(__dirname, 'example-absolute.html'))
+    .pipe(absoluteify('https://base'))
+    .pipe(concat(function (html) {
+      t.equal(
+        html.toString(),
+        fs.readFileSync(path.resolve(__dirname, 'example-absolute.html')).toString(),
+        'outputs the input'
       )
     }))
 })

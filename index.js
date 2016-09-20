@@ -3,6 +3,7 @@
 const assert = require('assert')
 const trumpet = require('trumpet')
 const partialRight = require('ap').partialRight
+const isAbsolute = require('is-absolute-url')
 const join = require('url-join')
 
 module.exports = absoluteify
@@ -19,5 +20,8 @@ function absoluteify (base) {
 }
 
 function absolute (element, base, attribute) {
-  element.setAttribute(attribute, (value) => join(base, value))
+  element.setAttribute(
+    attribute,
+    (value) => isAbsolute(value) ? value : join(base, value)
+  )
 }
