@@ -1,7 +1,7 @@
 {
   "name": "absoluteify",
   "main": "index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Streamingly transform relative HTML paths to absolute urls",
   "license": "MIT",
   "repository": "bendrucker/absoluteify",
