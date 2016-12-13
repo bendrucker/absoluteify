@@ -22,6 +22,6 @@ function absoluteify (base) {
 function absolute (element, base, attribute) {
   element.setAttribute(
     attribute,
-    (value) => isAbsolute(value) ? value : join(base, value)
+    (value) => value && isAbsolute(value) ? value : join(base, value)
   )
 }

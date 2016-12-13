@@ -33,3 +33,13 @@ test('already absolute', function (t) {
       )
     }))
 })
+
+test('inline <script>', function (t) {
+  t.plan(1)
+
+  fs.createReadStream(path.resolve(__dirname, 'inline-script.html'))
+    .pipe(absoluteify('https://base'))
+    .pipe(concat(function (html) {
+      t.ok(html)
+    }))
+})
