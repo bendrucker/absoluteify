@@ -35,11 +35,12 @@ test('already absolute', function (t) {
 })
 
 test('inline <script>', function (t) {
-  t.plan(1)
+  t.plan(2)
 
   fs.createReadStream(path.resolve(__dirname, 'inline-script.html'))
     .pipe(absoluteify('https://base'))
     .pipe(concat(function (html) {
-      t.ok(html)
+      t.notOk(/src/.test(html))
+      t.ok(/<script>/.test(html))
     }))
 })
