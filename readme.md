@@ -1,4 +1,4 @@
-# absoluteify [![Build Status](https://travis-ci.org/bendrucker/absoluteify.svg?branch=master)](https://travis-ci.org/bendrucker/absoluteify)
+# absoluteify [![Build Status](https://travis-ci.org/bendrucker/absoluteify.svg?branch=master)](https://travis-ci.org/bendrucker/absoluteify) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/absoluteify.svg)](https://greenkeeper.io/)
 
 > Streamingly transform relative HTML paths to absolute urls
 
