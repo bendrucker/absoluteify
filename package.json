@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "ap": "~0.2.0",
-    "is-absolute-url": "~2.1.0",
+    "is-absolute-url": "~3.0.0",
     "trumpet": "bendrucker/node-trumpet#set-attribute-transform",
     "url-join": "~4.0.0"
   }
